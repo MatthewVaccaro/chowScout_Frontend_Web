@@ -28,7 +28,7 @@ export const iconsDark = {
     searchIcon: searchIconDark,
     sendIcon: sendIconDark,
     timeIcon: timeIconDark,
-    twitterIcon: twitterIconDark,
+    twitterIcon: twitterIconDark
 }
 
 export const iconsLight = {

@@ -2,8 +2,8 @@ import './styles/main.css';
 
 function App() {
   return (
-<div>
-</div>
+  <div className="" >
+  </div>
   );
 }
 
