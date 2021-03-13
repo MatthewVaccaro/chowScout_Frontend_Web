@@ -1,5 +1,3 @@
-const colors = require('tailwindcss/colors')
-
 module.exports = {
   purge: [],
   presets: [],
@@ -16,16 +14,31 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
 
-      black: colors.black,
-      white: colors.white,
-      gray: colors.coolGray,
-      red: colors.red,
-      yellow: colors.amber,
-      green: colors.emerald,
-      blue: colors.blue,
-      indigo: colors.indigo,
-      purple: colors.violet,
-      pink: colors.pink,
+
+      red: 'rgba(246, 16, 103, 1)',
+      red50: 'rgba(246, 16, 103, .50)',
+      red20: 'rgba(246, 16, 103, .20)',
+
+      green: 'rgba(1, 217, 90, 1)',
+      green50: 'rgba(1, 217, 90, .5)',
+      green20: 'rgba(1, 217, 90, .2)',
+
+      blue: 'rgba(23, 137, 252, 1)',
+      blue50: 'rgba(23, 137, 252, .5)',
+      blue20: 'rgba(23, 137, 252, .2)',
+
+      yellow: 'rgba(253, 231, 76, 1)',
+      yellow50: 'rgba(253, 231, 76, .5)',
+      yellow20: 'rgba(253, 231, 76, .2)',
+
+      black: 'rgba(45, 48, 71, 1)',
+      black70: 'rgba(45, 48, 71, .7)',
+      black50: 'rgba(45, 48, 71, .5)',
+      black20: 'rgba(45, 48, 71, .2)',
+
+      white: 'rgba(255, 255, 255, 1)',
+      gray: 'rgba(242, 242, 242, 1)',
+      darkGray: 'rgba(232, 232, 232, 1)',
     },
     spacing: {
       px: '1px',

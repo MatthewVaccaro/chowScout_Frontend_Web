@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 90pt;
+}
+
+h2 {
+  font-size: 2.15rem;
+  line-height: 46pt;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 28pt;
+}
+
+h4 {
+  font-size: 1.18rem;
+  line-height: 32pt;
+}
+
+p,
+a {
+  font-size: 1rem;
+  line-height: 19pt;
+}
+
+h5 {
+  font-size: 0.875rem;
+  line-height: 16pt;
+}
+
+h6 {
+  font-size: 0.75rem;
+  line-height: 14pt;
+}
