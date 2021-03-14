@@ -1,14 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './styles/main.css';
-import Button from "./util/Button"
-import {iconsLight} from "./assets/icons"
+import {Route} from "react-router-dom";
+import LandingPage from "./views/landingPage"
 
 function App() {
-  const [state, setState] = useState({name: 'hello'})
   return (
-  <div className="" >
-    <Button background="blue" content="Button" icon={iconsLight.arrowIcon} />
-    
+  <div>
+     <Route exact path="/" component={LandingPage} />
   </div>
   );
 }
