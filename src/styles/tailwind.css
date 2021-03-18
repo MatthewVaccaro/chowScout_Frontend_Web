@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 h1 {
   font-size: 4.3rem;
   line-height: 70pt;
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h2 {
@@ -45,6 +45,6 @@ h6 {
 @media only screen and (max-width: 500px) {
   h1 {
     font-size: 3.5rem;
-    line-height: 55pt;
+    line-height: 49pt;
   }
 }
