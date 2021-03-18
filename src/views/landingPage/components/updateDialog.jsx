@@ -12,7 +12,7 @@ function UpdateDialog({setDialog, setInput, input}) {
             <h3 className="font-bold text-black" >🤤 Hungry For Updates?</h3>
             <img onClick={()=> setDialog(false)} src={iconsDark.closeIcon} alt="close icon"/>
             </div>
-            <p className="mb-4 text-black" > It means the world to me that you’re interested in ChowScout! I promise you will only recieve emails about Beta testing and final lauch 🚀 </p>
+            <p className="mb-4 text-black" > It means the world to me that you’re interested in ChowScout! I promise you will only recieve emails about Beta testing and final launch 🚀 </p>
             <div className="flex justify-between">
             <input
             className="border-darkGray border-2 py-4 px-4 text-base bg-white w-3/4 rounded-md"
@@ -20,7 +20,7 @@ function UpdateDialog({setDialog, setInput, input}) {
             placeholder="Enter Email Address"
             value={input}
             />
-            <Button content={viewPortSize === 375 ? "" : "Submit"} icon={iconsLight.sendIcon} background="green" />
+            <Button content={viewPortSize < 500 ? "" : "Submit"} icon={iconsLight.sendIcon} background="green" />
             </div>
         </div>
     )

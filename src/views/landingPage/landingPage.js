@@ -26,7 +26,7 @@ function LandingPage() {
                     <h3 className="mb-6 font-medium text-black70"> A wickedly simple, food focused search engine. Tell us what you’re hankering and we’ll show you who serves it! </h3>
             
                 </div>
-                <Button onClick={()=>{ viewPortSize <= 375 ? setDialog(true) || window.scrollTo(0, 0) : console.log("sent")}} content={viewPortSize <= 375 ? "Get Updates" : "Submit"} icon={iconsLight.sendIcon} background="green" />
+                <Button onClick={()=>{ viewPortSize < 500 ? setDialog(true) || window.scrollTo(0, 0) : console.log("sent")}} content={viewPortSize < 500 ? "Get Updates" : "Submit"} icon={iconsLight.sendIcon} background="green" />
                 
             <p className="hidden sm:block text-black mt-10"> Sounds Tasty? Add your email to be notified of release! </p>
             <div className="flex justify-between mt-2 sm:w-7/12 " >
