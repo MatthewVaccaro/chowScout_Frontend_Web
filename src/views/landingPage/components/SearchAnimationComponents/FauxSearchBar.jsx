@@ -30,53 +30,44 @@ function FauxSearchItem({restaurant, dish, price, description, change}) {
 function FauxSearchBar() {
 
     const fauxData = [[{
+        id: 0,
         restaurant: "Hopdoddy",
         dish: "The Magic Shroom ",
         price: "$12.99",
         description: "Creamy goat cheese, field mushrooms, lettuce, tomato, onion, mayo & basil pesto sauce."
     },{
+        id: 1,
         restaurant: "Burger Up",
         dish: "Troyathlon",
         price: "$14.55",
         description: "Quinoa and black bean burger, lettuce, tomato, yellow cheddar, jack daniel's maple ketchup, fresh jalapeño, avocado."
-    },{
-        restaurant: "Emmy Squared",
-        dish: "Le Big Matt",
-        price: "$16.80",
-        description: "double-stack beef patties, American cheese, Sammy Sauce on a pretzel bun."
-    } ],
+    }],
     [{
+        id: 2,
         restaurant: "Love, Peace, Pho",
         dish: "Bánh Mì",
         price: "$9.00",
         description: "Baguettes are lightly toasted and filled with hollandaise, pate, lettuce, cucumber, jalapeno, pickle radish, carrot & cilantro."
     },{
-        restaurant: "East Side Banh Mi",
-        dish: "Pork Banh Mi",
-        price: "$9.79",
-        description:'Black Pepper-Caramel Roasted Pork Shoulder. Served on Baguette w/ Fried Shallot Mayo, Pickled Veggies, Cilantro, Cucumber, Jalapeños & Maggi'
-    },{
+        id: 3,
         restaurant: "Far East Nashville",
         dish: "Banh Mi",
         price: "$9.00",
         description: "Vietnamese bread stuffed with fresh cucumber, onion, cilantro, jalapeno, pickled radish &carrot, scallion oil with your choice of protein"
     } ],
     [{
+        id: 4,
         restaurant: "Taqueria del Sol",
         dish: "The Memphis",
         price: "$3.89",
         description: "Chopped smoked pork with a spicy jalapeños coleslaw & tequila bbq sauce."
     },{
-        restaurant: "Carniceria Y Taqueria Don Juan",
+        id: 5,
+        restaurant: "Taco Mamacita",
         dish: "Taco Royale",
         price: "$3.75",
         description: "A double-stacked taco filled with roasted chicken, salsa verde, lettuce, pico de gallo, chorizo, creamy black bean, chipotle cream sauce."
-    },{
-        restaurant: "Bakersfield Tacos",
-        dish: "Carnitas",
-        price: "$5.00",
-        description: "Beer braised pork, guacamole, tomatillo crema, pickled red onion, cilantro"
-    } ]]
+    }]]
     const terms = ["Burgers", "Bánh Mì", "Tacos", ""];
 
     const [word, setWord] = useState(0); // Words
@@ -96,11 +87,8 @@ function FauxSearchBar() {
 
             if (terms[word].length === letter && reverse === false){
                 
-                console.log(word)
                 setResult(fauxData[word])
-                const eachWordPause = setTimeout(() => {
-                        console.log(result)
-                        
+                const eachWordPause = setTimeout(() => {    
                         setReverse(true)
                 }, 3000);
                 return
@@ -139,7 +127,7 @@ function FauxSearchBar() {
         <AnimatePresence>
         {
         result ?
-        result.map( value => <FauxSearchItem restaurant={value.restaurant} dish={value.dish} price={value.price} description={value.description} /> )
+        result.map( value => <FauxSearchItem restaurant={value.restaurant} dish={value.dish} price={value.price} description={value.description} key={value.id} /> )
         :
         ""
         }

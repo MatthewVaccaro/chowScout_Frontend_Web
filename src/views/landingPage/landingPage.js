@@ -11,6 +11,7 @@ import TwoCol from './components/TwoCol'
 import chowScoutLogo from "../../assets/graphics/chowScoutLogo.svg"
 import {iconsLight} from "../../assets/icons"
 import breakfastTablePhoto from "../../assets/photos/breakfastTablePhoto.png"
+import FauxSearchBar from './components/SearchAnimationComponents/FauxSearchBar'
 
 
 
@@ -62,7 +63,9 @@ function LandingPage() {
             }
             <img className=" hidden lg:block sm:object-cover sm:absolute sm:z-0 sm:rounded-l-3xl sm:right-0 sm:top-36 sm:w-2/5" style={{height: "550px"}}  src={breakfastTablePhoto} alt="A top down few of a table filled with an assortment of delicious looking breakfast food." /> 
 
-            <TwoCol />
+            <TwoCol rightCol={ <FauxSearchBar /> } />
+
+            <div className="bg-yellow" style={{width: '200px', height: '2000px'}}/>
             
         </div>
     )
