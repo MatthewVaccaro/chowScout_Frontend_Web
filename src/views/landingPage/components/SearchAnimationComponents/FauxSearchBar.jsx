@@ -112,7 +112,7 @@ function FauxSearchBar() {
     
   
     return (
-        <div style={{height: '550px'}} className="w-full sm:w-2/5" >
+        <div style={{height: '450px'}} className="w-full sm:w-2/5" >
         <div className="flex items-center rounded-md shadow-xl px-3 py-2 w-full" >
             <img className="mr-4" src={iconsDark.searchIcon} alt="search icon"/>
             <h3 className="fauxSearch" > {terms[word].substring(0, letter)}

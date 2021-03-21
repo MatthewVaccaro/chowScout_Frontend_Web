@@ -9,9 +9,11 @@ import TwoCol from './components/TwoCol'
 
 //Assets
 import chowScoutLogo from "../../assets/graphics/chowScoutLogo.svg"
-import {iconsLight} from "../../assets/icons"
+import {iconsLight, iconsDark} from "../../assets/icons"
 import breakfastTablePhoto from "../../assets/photos/breakfastTablePhoto.png"
 import FauxSearchBar from './components/SearchAnimationComponents/FauxSearchBar'
+import LocationAsset from './components/LocationAsset'
+import LowerSignUpForm from './components/LowerSignUpForm'
 
 
 
@@ -38,7 +40,8 @@ function LandingPage() {
 
                     <div className="flex justify-between mt-2 gap-4 " >
                     <input
-                        className="hidden sm:inline-block border-darkGray border-2 py-4 px-4 text-base w-5/6 bg-white rounded-md"
+                        className="hidden sm:inline-block border-darkGray border-2 py-4 px-4 text-base w-5/6 bg-white rounded-md focus:border-blue transition-all duration-500"
+                        style={{outline: 'none'}}
                         name="fieldOne"
                         placeholder="Enter Email Address"
                         value={input.fieldOne}
@@ -63,9 +66,22 @@ function LandingPage() {
             }
             <img className=" hidden lg:block sm:object-cover sm:absolute sm:z-0 sm:rounded-l-3xl sm:right-0 sm:top-36 sm:w-2/5" style={{height: "550px"}}  src={breakfastTablePhoto} alt="A top down few of a table filled with an assortment of delicious looking breakfast food." /> 
 
-            <TwoCol rightCol={ <FauxSearchBar /> } />
+            <TwoCol header="The new way to discover amazing place & food!" paragraph="For too long we’ve been forced to look for places that serve what you hunger for! The tables have turned, discover all the eateries who have what you desire!" rightCol={ <FauxSearchBar /> } />
 
-            <div className="bg-yellow" style={{width: '200px', height: '2000px'}}/>
+            <TwoCol header="Current available locations" paragraph="I’m one lad trying to catalog all the restaurants in the United States. Starting in my current home town Nashville and going where ever hungry humans call! I’m working hard to add in new cities as quickly as possible." rightCol={ <LocationAsset /> } />
+
+            <LowerSignUpForm input={input} setInput={setInput} />
+
+            <footer className="flex flex-col items-center my-24 cursor-pointer">
+                <a href="https://twitter.com/EarHolesMcgee" target="blank">
+                    <div className="flex items-center">
+                    <img src={iconsDark.twitterIcon} alt="twitter Icon"/>
+                    <h4 className="text-black70 ml-2"> Twitter </h4>
+                    </div>
+                </a>
+                <h5 className="text-black50 my-3">All rights reserved ® ChowScout 2021</h5>
+                <img src={chowScoutLogo} alt="chowScout Logo"/>
+            </footer>
             
         </div>
     )
