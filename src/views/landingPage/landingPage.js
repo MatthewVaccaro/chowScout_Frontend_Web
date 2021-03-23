@@ -14,6 +14,7 @@ import breakfastTablePhoto from "../../assets/photos/breakfastTablePhoto.png"
 import FauxSearchBar from './components/SearchAnimationComponents/FauxSearchBar'
 import LocationAsset from './components/LocationAsset'
 import LowerSignUpForm from './components/LowerSignUpForm'
+import { motion, AnimatePresence } from 'framer-motion'
 
 
 
@@ -27,6 +28,8 @@ function LandingPage() {
     }
 
     const viewPortSize = window.innerWidth
+
+    window.onscroll = ()=>{  if (dialog){ setDialog(false)}}
 
     return (
         <div className="mainContainer  w-full h-full">
@@ -47,23 +50,33 @@ function LandingPage() {
                         value={input.fieldOne}
                         onChange={(e)=> changeHander(e)}
                     />
-                    <Button onClick={()=>{ viewPortSize < 640 ? setDialog(true) || window.scrollTo(0, 0) : console.log("sent")}} content={viewPortSize < 640 ? "Get Updates" : "Submit"} icon={iconsLight.sendIcon} background="green" />
+                    <Button onClick={()=>{ viewPortSize < 640 ? window.scrollTo(0, 0) || setTimeout(() => { setDialog(true)}, 100) : console.log("sent")}} content={viewPortSize < 640 ? "Get Updates" : "Submit"} icon={iconsLight.sendIcon} background="green" />
             </div>
 
             </div>
             <div className="hidden w-5/6 lg:block"/>
         </div>
+        <AnimatePresence>
         {dialog ? (
                 <>
-                <div className=" absolute top-0 left-0 w-full h-full bg-black50"/>
-                <div className="absolute bg-white rounded-t-3xl z-10 bottom-0 left-0 w-full sm:hidden">
-                    <UpdateDialog setDialog={setDialog} setInput={setInput} input={input.fieldOne}  />
-                </div>
+                        <motion.div
+                        initial={{opacity: '0%'}}
+                        animate={{opacity: '100%'}}
+                        exit={{opacity: '0%'}}
+                        className=" absolute top-0 left-0 w-full h-full bg-black50"/>
+                        <motion.div
+                        initial={{bottom: '-230px'}}
+                        animate={{bottom: '0px'}}
+                        exit={{bottom: '-500px', opacity: '0%'}}
+                        className="absolute bg-white rounded-t-3xl z-10 bottom-0 left-0 w-full sm:hidden">
+                            <UpdateDialog setDialog={setDialog} setInput={setInput} input={input}  />
+                        </motion.div>
                 </>
                 )
                 :
                 ""
             }
+            </AnimatePresence>
             <img className=" hidden lg:block sm:object-cover sm:absolute sm:z-0 sm:rounded-l-3xl sm:right-0 sm:top-36 sm:w-2/5" style={{height: "550px"}}  src={breakfastTablePhoto} alt="A top down few of a table filled with an assortment of delicious looking breakfast food." /> 
 
             <TwoCol header="The new way to discover amazing place & food!" paragraph="For too long we’ve been forced to look for places that serve what you hunger for! The tables have turned, discover all the eateries who have what you desire!" rightCol={ <FauxSearchBar /> } />
