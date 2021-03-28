@@ -19667,6 +19667,10 @@ video {
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+.mainContainer {
+  max-width: 1040px;
+}
+
 h1 {
   font-size: 4.3rem;
   line-height: 70pt;
@@ -19676,7 +19680,9 @@ h1 {
 
 h2 {
   font-size: 2.15rem;
-  line-height: 46pt;
+  line-height: 38pt;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
 }
 
 h3 {
@@ -19686,7 +19692,7 @@ h3 {
 
 h4 {
   font-size: 1.18rem;
-  line-height: 32pt;
+  line-height: 23pt;
 }
 
 p,
