@@ -1,7 +1,8 @@
 // Deps
 import React, {useState} from 'react'
 // Utils
-import Button from "../../components/Button"
+import Button from "../../utility/components/Button"
+import Input from "../../utility/components/Input"
 //Components
 import UpdateDialog from './components/updateDialog'
 import TwoCol from './components/TwoCol'
@@ -15,6 +16,7 @@ import FauxSearchBar from './components/SearchAnimationComponents/FauxSearchBar'
 import LocationAsset from './components/LocationAsset'
 import LowerSignUpForm from './components/LowerSignUpForm'
 import { motion, AnimatePresence } from 'framer-motion'
+
 
 
 
@@ -33,6 +35,7 @@ function LandingPage() {
 
     return (
         <div className="mainContainer  w-full h-full">
+            
             <img className="mx-auto mt-6 sm:mb-20" src={chowScoutLogo} alt="ChowScout Logo in Green"/>
             <div className="text-black bg-yellow font-bold p-2 inline-block rounded-md mb-4 mt-12 sm:mt-5"> Coming Soon </div>
         <div className="flex justify-between w-full">
@@ -41,15 +44,10 @@ function LandingPage() {
                     <h3 className="mb-6 font-medium text-black70"> A wickedly simple, food focused search engine. Tell us what you’re hankering and we’ll show you who serves it! </h3>
                     <p className="hidden sm:block text-black mt-10"> Sounds Tasty? Add your email to be notified of release! </p>
 
-                    <div className="flex justify-between mt-2 gap-4 " >
-                    <input
-                        className="hidden sm:inline-block border-darkGray border-2 py-4 px-4 text-base w-5/6 bg-white rounded-md focus:border-blue transition-all duration-500"
-                        style={{outline: 'none'}}
-                        name="fieldOne"
-                        placeholder="Enter Email Address"
-                        value={input.fieldOne}
-                        onChange={(e)=> changeHander(e)}
-                    />
+                    <div className="flex justify-between mt-2 gap-4" >
+                    <div className="hidden sm:inline-block w-5/6" >
+                    <Input state={input} setState={setInput} name="fieldOne" placeholder="enter email address"/>
+                    </div>
                     <Button onClick={()=>{ viewPortSize < 640 ? window.scrollTo(0, 0) || setTimeout(() => { setDialog(true)}, 100) : console.log("sent")}} content={viewPortSize < 640 ? "Get Updates" : "Submit"} icon={iconsLight.sendIcon} background="green" />
             </div>
 
