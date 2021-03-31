@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from "../../../utility/components/Button"
 import Input from "../../../utility/components/Input"
+import {POST_earlyEmail} from "../../../utility/requestHandler"
 import {iconsLight, iconsDark} from "../../../assets/icons"
 import {motion} from "framer-motion"
 
@@ -24,7 +25,11 @@ function UpdateDialog({setDialog, setInput, input}) {
                     <Input state={input} setState={setInput} name="email" placeholder="Enter email address" validation={true} />
                 </div>
 
-            <Button content={viewPortSize < 500 ? "" : "Submit"} icon={iconsLight.sendIcon} background="green" />
+            <Button
+            content={viewPortSize < 500 ? "" : "Submit"}
+            icon={iconsLight.sendIcon} background="green"
+            onClick={()=> { POST_earlyEmail(input).then(r => console.log(r)).catch(err => console.log(err)) }}
+            />
             </div>
         </motion.div>
     )
