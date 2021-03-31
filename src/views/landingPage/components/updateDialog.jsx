@@ -1,16 +1,12 @@
 import React from 'react'
-import Button from "../../../components/Button"
+import Button from "../../../utility/components/Button"
+import Input from "../../../utility/components/Input"
 import {iconsLight, iconsDark} from "../../../assets/icons"
 import {motion} from "framer-motion"
 
 function UpdateDialog({setDialog, setInput, input}) {
 
     const viewPortSize = window.innerWidth
-
-    function changeHander(e){
-        setInput({...input, [e.target.name]: e.target.value})
-        console.log(input)
-    }
 
     return (
         <motion.div
@@ -24,13 +20,10 @@ function UpdateDialog({setDialog, setInput, input}) {
             </div>
             <p className="mb-4 text-black" > It means the world to me that you’re interested in ChowScout! I promise you will only recieve emails about Beta testing and final launch 🚀 </p>
             <div className="flex justify-between">
-            <input
-            className="border-darkGray border-2 py-4 px-4 text-base bg-white w-3/4 rounded-md"
-            name="fieldOne"
-            placeholder="Enter Email Address"
-            value={input.fieldOne}
-            onChange={(e)=>{changeHander(e)}}
-            />
+                <div className="w-3/4" >
+                    <Input state={input} setState={setInput} name="email" placeholder="Enter email address"/>
+                </div>
+
             <Button content={viewPortSize < 500 ? "" : "Submit"} icon={iconsLight.sendIcon} background="green" />
             </div>
         </motion.div>

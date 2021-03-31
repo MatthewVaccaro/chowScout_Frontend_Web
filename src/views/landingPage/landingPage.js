@@ -22,12 +22,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 function LandingPage() {
 
-    const [input, setInput] = useState({ fieldOne: "", fieldTwo: "" })
+    const [input, setInput] = useState({ email: "", city: "" })
     const [dialog, setDialog] = useState(false)
-
-    function changeHander(e){
-        setInput({...input, [e.target.name]: e.target.value})
-    }
 
     const viewPortSize = window.innerWidth
 
@@ -46,7 +42,7 @@ function LandingPage() {
 
                     <div className="flex justify-between mt-2 gap-4" >
                     <div className="hidden sm:inline-block w-5/6" >
-                    <Input state={input} setState={setInput} name="fieldOne" placeholder="enter email address"/>
+                    <Input state={input} setState={setInput} name="email" placeholder="enter email address"/>
                     </div>
                     <Button onClick={()=>{ viewPortSize < 640 ? window.scrollTo(0, 0) || setTimeout(() => { setDialog(true)}, 100) : console.log("sent")}} content={viewPortSize < 640 ? "Get Updates" : "Submit"} icon={iconsLight.sendIcon} background="green" />
             </div>

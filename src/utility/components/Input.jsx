@@ -12,7 +12,6 @@ function Input({name, state, setState, placeholder}) {
     placeholder={ placeholder ? placeholder : name }
     value={state ? state[name] : ""}
     onChange={(e)=>{changeHandler(e, state, setState)}}
-    onBlur={(e)=>{console.log(e.target.value)}}
     />
 </div>
     )
