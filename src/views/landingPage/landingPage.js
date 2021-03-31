@@ -1,6 +1,7 @@
 // Deps
 import React, {useState} from 'react'
 // Utils
+import {POST_earlyEmail} from "../../utility/requestHandler"
 import Button from "../../utility/components/Button"
 import Input from "../../utility/components/Input"
 //Components
@@ -22,7 +23,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 function LandingPage() {
 
-    const [input, setInput] = useState({ email: "", city: "", valid: null })
+    const [input, setInput] = useState({ email: "", city: "" })
     const [dialog, setDialog] = useState(false)
 
     const viewPortSize = window.innerWidth
@@ -44,7 +45,7 @@ function LandingPage() {
                     <div className="hidden sm:inline-block w-5/6" >
                     <Input state={input} setState={setInput} name="email" placeholder="enter email address" validation={true}/>
                     </div>
-                    <Button onClick={()=>{ viewPortSize < 640 ? window.scrollTo(0, 0) || setTimeout(() => { setDialog(true)}, 100) : console.log("sent")}} content={viewPortSize < 640 ? "Get Updates" : "Submit"} icon={iconsLight.sendIcon} background="green" />
+                    <Button onClick={()=>{ viewPortSize < 640 ? window.scrollTo(0, 0) || setTimeout(() => { setDialog(true)}, 100) : POST_earlyEmail(input).then(r => console.log(r)).catch(err => console.log(err)) }} content={viewPortSize < 640 ? "Get Updates" : "Submit"} icon={iconsLight.sendIcon} background="green" />
             </div>
 
             </div>

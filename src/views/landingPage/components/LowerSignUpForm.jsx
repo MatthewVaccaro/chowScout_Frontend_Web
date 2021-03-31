@@ -1,5 +1,6 @@
 import React from 'react'
 //Component
+import {POST_earlyEmail} from "../../../utility/requestHandler"
 import Button from "../../../utility/components/Button"
 import Input from "../../../utility/components/Input"
 //Assets
@@ -17,7 +18,13 @@ function LowerSignUpForm({input, setInput}) {
                 <div className="md:w-3/5" >
                     <Input state={input} setState={setInput} name="email" placeholder="Enter eMail Address" validation={true} />
                 </div>
-                <Button content="Submit" color="white" background="green" icon={iconsLight.sendIcon} />
+                <Button
+                content="Submit"
+                color="white"
+                background="green"
+                icon={iconsLight.sendIcon}
+                onClick={()=> { POST_earlyEmail(input).then(r => console.log(r)).catch(err => console.log(err)) }}
+                 />
             </div>
         </div>
     )
