@@ -21,7 +21,7 @@ function UpdateDialog({setDialog, setInput, input}) {
             <p className="mb-4 text-black" > It means the world to me that you’re interested in ChowScout! I promise you will only recieve emails about Beta testing and final launch 🚀 </p>
             <div className="flex justify-between">
                 <div className="w-3/4" >
-                    <Input state={input} setState={setInput} name="email" placeholder="Enter email address"/>
+                    <Input state={input} setState={setInput} name="email" placeholder="Enter email address" validation={true} />
                 </div>
 
             <Button content={viewPortSize < 500 ? "" : "Submit"} icon={iconsLight.sendIcon} background="green" />
