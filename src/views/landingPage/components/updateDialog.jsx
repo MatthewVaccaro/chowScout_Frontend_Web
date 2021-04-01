@@ -1,13 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Button from "../../../utility/components/Button"
 import Input from "../../../utility/components/Input"
 import {POST_earlyEmail} from "../../../utility/requestHandler"
 import {iconsLight, iconsDark} from "../../../assets/icons"
-import {motion} from "framer-motion"
+import {motion, AnimatePresence} from "framer-motion"
+import EmailNotification from './EmailNotification'
 
 function UpdateDialog({setDialog, setInput, input}) {
 
     const viewPortSize = window.innerWidth
+
+    const [notification, setNotification] = useState(null)
+
+    function postAndNotify(){
+        POST_earlyEmail(input).then( (res) => { 
+            console.log(res)
+            if ( res.status === 200){
+                setNotification('good')
+                setTimeout(() => {
+                    setNotification(null)
+                }, 3000);
+            }else{
+                console.log(res)
+                setNotification('bad')
+                setTimeout(() => {
+                    setNotification(null)
+                }, 3000);
+            }
+        }).catch( err => {
+            console.log(err)
+            setNotification('bad')
+                setTimeout(() => {
+                    setNotification(null)
+                }, 3000);
+        })
+    }
 
     return (
         <motion.div
@@ -15,6 +42,19 @@ function UpdateDialog({setDialog, setInput, input}) {
         animate={{opacity: '100%' , transition:{duration: .6, delay: .5}}}
         exit={{opacity: '0%'}}
         className=" bg-white p-4 rounded-t-3xl overflow-y-hidden" >
+
+
+            <AnimatePresence>
+            { notification ? (<motion.div
+            initial={{opacity: '0%', bottom: '-5rem'}}
+            animate={{opacity: '100%', bottom: '50%'}}
+            exit={{opacity: '0%', bottom: '-5rem'}}
+            style={{transform: 'translateX(-50%)'}}
+            className=" fixed bottom-4 left-1/2 z-20">
+            <EmailNotification status={notification} />
+            </motion.div>) : "" }
+            </AnimatePresence>
+
             <div className="flex justify-between items-center mb-2">
             <h3 className="font-bold text-black" >🤤 Hungry For Updates?</h3>
             <img onClick={()=> setDialog(false)} src={iconsDark.closeIcon} alt="close icon"/>
@@ -28,7 +68,7 @@ function UpdateDialog({setDialog, setInput, input}) {
             <Button
             content={viewPortSize < 500 ? "" : "Submit"}
             icon={iconsLight.sendIcon} background="green"
-            onClick={()=> { POST_earlyEmail(input).then(r => console.log(r)).catch(err => console.log(err)) }}
+            onClick={()=> {postAndNotify()}}
             />
             </div>
         </motion.div>
