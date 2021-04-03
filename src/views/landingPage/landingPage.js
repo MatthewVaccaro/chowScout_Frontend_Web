@@ -30,7 +30,7 @@ function LandingPage() {
 
     const viewPortSize = window.innerWidth
 
-    window.onscroll = ()=>{  if( window.scrollY > 800 ){ setDialog(false)  } }
+    window.onscroll = ()=>{  if( window.scrollY > 300 ){ setDialog(false)  } }
 
     function dialogPop(){
             window.scrollTo(0, 0)
@@ -96,15 +96,16 @@ function LandingPage() {
         {dialog ? (
                 <>
                         <motion.div
-                        initial={{opacity: '0%'}}
-                        animate={{opacity: '100%'}}
+                        initial={{opacity: '0%', height: '0%'}}
+                        animate={{opacity: '100%', height: '400%'}}
                         exit={{opacity: '0%'}}
-                        className=" absolute top-0 left-0 w-full h-full bg-black50"/>
-                        <motion.div
+                        className=" absolute top-0 left-0 w-full bg-black50"/>
+                        <motion.div 
                         initial={{bottom: '-230px'}}
-                        animate={{bottom: '0px'}}
-                        exit={{bottom: '-230px', opacity: '0%'}}
-                        className="absolute bg-white rounded-t-3xl z-10 bottom-0 left-0 w-full overflow-y-auto overscroll-contain sm:hidden">
+                        animate={{bottom: '400px'}}
+                        exit={{bottom: '900px', opacity: '0%'}}
+                        style={{width: '359px'}}
+                        className="absolute bg-white rounded-3xl z-10 left-2 sm:hidden">
                             <UpdateDialog setDialog={setDialog} setInput={setInput} input={input}  />
                         </motion.div>
                 </>
@@ -114,7 +115,6 @@ function LandingPage() {
             }
             </AnimatePresence>
             <img className=" hidden lg:block sm:object-cover sm:absolute sm:z-0 sm:rounded-l-3xl sm:right-0 sm:top-36 sm:w-2/5" style={{height: "550px"}}  src={breakfastTablePhoto} alt="A top down few of a table filled with an assortment of delicious looking breakfast food." /> 
-
             <TwoCol header="The new way to discover amazing place & food!" paragraph="For too long we’ve been forced to look for places that serve what you hunger for! The tables have turned, discover all the eateries who have what you desire!" rightCol={ <FauxSearchBar /> } />
 
             <TwoCol header="Current available locations" paragraph="I’m one lad trying to catalog all the restaurants in the United States. Starting in my current home town Nashville and going where ever hungry humans call! I’m working hard to add in new cities as quickly as possible." rightCol={ <LocationAsset /> } />

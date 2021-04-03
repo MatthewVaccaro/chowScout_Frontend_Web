@@ -41,7 +41,7 @@ function UpdateDialog({setDialog, setInput, input}) {
         initial={{opacity: '0%'}}
         animate={{opacity: '100%' , transition:{duration: .6, delay: .5}}}
         exit={{opacity: '0%'}}
-        className=" bg-white p-4 rounded-t-3xl overflow-y-hidden" >
+        className=" bg-white p-4 rounded-3xl" >
 
 
             <AnimatePresence>
