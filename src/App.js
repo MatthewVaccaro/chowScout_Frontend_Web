@@ -14,8 +14,6 @@ function App() {
     return null;
   };
 
-  console.log(tracker)
-
   return (
   <div className="mainContainer sm:mx-auto px-4 md:px-12 lg:px-16" >
      <Route render={tracker} />
