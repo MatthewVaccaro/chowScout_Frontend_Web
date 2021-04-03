@@ -30,7 +30,7 @@ function LandingPage() {
 
     const viewPortSize = window.innerWidth
 
-    window.onscroll = ()=>{  if (dialog){ setDialog(false)}}
+    window.onscroll = ()=>{  if( window.scrollY > 800 ){ setDialog(false)  } }
 
     function dialogPop(){
             window.scrollTo(0, 0)
@@ -103,8 +103,8 @@ function LandingPage() {
                         <motion.div
                         initial={{bottom: '-230px'}}
                         animate={{bottom: '0px'}}
-                        exit={{bottom: '-500px', opacity: '0%'}}
-                        className="absolute bg-white rounded-t-3xl z-10 bottom-0 left-0 w-full sm:hidden">
+                        exit={{bottom: '-230px', opacity: '0%'}}
+                        className="absolute bg-white rounded-t-3xl z-10 bottom-0 left-0 w-full overflow-y-auto overscroll-contain sm:hidden">
                             <UpdateDialog setDialog={setDialog} setInput={setInput} input={input}  />
                         </motion.div>
                 </>

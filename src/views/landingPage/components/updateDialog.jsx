@@ -14,25 +14,25 @@ function UpdateDialog({setDialog, setInput, input}) {
 
     function postAndNotify(){
         POST_earlyEmail(input).then( (res) => { 
-            console.log(res)
             if ( res.status === 200){
                 setNotification('good')
                 setTimeout(() => {
                     setNotification(null)
-                }, 3000);
+                    setDialog(false)
+                }, 1000);
             }else{
                 console.log(res)
                 setNotification('bad')
                 setTimeout(() => {
                     setNotification(null)
-                }, 3000);
+                }, 1000);
             }
         }).catch( err => {
             console.log(err)
             setNotification('bad')
                 setTimeout(() => {
                     setNotification(null)
-                }, 3000);
+                }, 1000);
         })
     }
 
