@@ -78,7 +78,7 @@ function LandingPage() {
             <div className="text-black bg-yellow font-bold p-2 inline-block rounded-md mb-4 mt-12 sm:mt-5"> Coming Soon </div>
         <div className="flex justify-between w-full">
             <div className="">
-                    <h1 onClick={()=>{ setNotification(!notification) }} className="mb-6 text-black" > What is your belly hungry for? </h1>
+                    <h1 className="mb-6 text-black" > What is your belly hungry for? </h1>
                     <h3 className="mb-6 font-medium text-black70"> A wickedly simple, food focused search engine. Tell us what you’re hankering and we’ll show you who serves it! </h3>
                     <p className="hidden sm:block text-black mt-10"> Sounds Tasty? Add your email to be notified of release! </p>
 
