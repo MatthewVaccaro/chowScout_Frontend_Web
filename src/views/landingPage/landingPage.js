@@ -115,9 +115,9 @@ function LandingPage() {
             }
             </AnimatePresence>
             <img className=" hidden lg:block sm:object-cover sm:absolute sm:z-0 sm:rounded-l-3xl sm:right-0 sm:top-36 sm:w-2/5" style={{height: "550px"}}  src={breakfastTablePhoto} alt="A top down few of a table filled with an assortment of delicious looking breakfast food." /> 
-            <TwoCol header="The new way to discover amazing place & food!" paragraph="For too long we’ve been forced to look for places that serve what you hunger for! The tables have turned, discover all the eateries who have what you desire!" rightCol={ <FauxSearchBar /> } />
+            <TwoCol header="🤔 Where should we eat!?!" paragraph={`We've all been there, going back and forth with someone on "where to eat?". Whether it be friends, co-workers, long-time partners, or a first date, finding a place to eat is tedious. ChowScout simplifies this by finding all the restaurants in your city that serve what you desire. So no more endless Googling, Twitter posting, or calling up your great uncle Louis for recommendations.`} rightCol={ <FauxSearchBar /> } />
 
-            <TwoCol header="Current available locations" paragraph="I’m one lad trying to catalog all the restaurants in the United States. Starting in my current home town Nashville and going where ever hungry humans call! I’m working hard to add in new cities as quickly as possible." rightCol={ <LocationAsset /> } />
+            <TwoCol header="Only in Nashville, for now!" paragraph="I am one lad trying to catalog all the restaurants in the United States and currently working on Nashville. I am striving to add in new cities as quickly as possible! I go where my hungry comrades call, so let me know where to go next!" rightCol={ <LocationAsset /> } />
 
             <LowerSignUpForm input={input} setInput={setInput} />
 
