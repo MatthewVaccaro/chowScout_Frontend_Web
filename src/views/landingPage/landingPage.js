@@ -102,10 +102,10 @@ function LandingPage() {
                         className=" absolute top-0 left-0 w-full bg-black50"/>
                         <motion.div 
                         initial={{bottom: '-230px'}}
-                        animate={{bottom: '400px'}}
+                        animate={{bottom: '300px'}}
                         exit={{bottom: '900px', opacity: '0%'}}
-                        style={{width: '359px'}}
-                        className="absolute bg-white rounded-3xl z-10 left-2 sm:hidden">
+                        style={{width: '95%', transform: 'translateX(-50%)'}}
+                        className="absolute bg-white rounded-3xl z-10 left-1/2 sm:hidden">
                             <UpdateDialog setDialog={setDialog} setInput={setInput} input={input}  />
                         </motion.div>
                 </>
