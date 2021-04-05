@@ -79,8 +79,8 @@ function LandingPage() {
         <div className="flex justify-between w-full">
             <div className="">
                     <h1 className="mb-6 text-black" > What is your belly hungry for? </h1>
-                    <h3 className="mb-6 font-medium text-black70"> A wickedly simple, food focused search engine. Tell us what you’re hankering and we’ll show you who serves it! </h3>
-                    <p className="hidden sm:block text-black mt-10"> Sounds Tasty? Add your email to be notified of release! </p>
+                    <h3 className="mb-6 font-medium text-black70"> A wickedly simple, food focused-search engine. Tell us what you’re hankering for and we’ll show you who serves it! </h3>
+                    <p className="hidden sm:block text-black mt-10"> Sound Tasty? Add your email to be notified of release! </p>
 
                     <div className="flex justify-between mt-2 gap-4" >
                     <div className="hidden sm:inline-block w-5/6" >
