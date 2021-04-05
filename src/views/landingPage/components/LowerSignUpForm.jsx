@@ -56,7 +56,7 @@ function LowerSignUpForm({input, setInput}) {
                 <div className="md:w-1/5 mb-4 md:mb-0" >
                     <Input state={input} setState={setInput} name="city" placeholder="Enter City"/>
                 </div>
-                <div className="md:w-3/5 mb-4 md:mb-" >
+                <div className="md:w-3/5 mb-4 md:mb-0" >
                     <Input state={input} setState={setInput} name="email" placeholder="Enter eMail Address" validation={true} />
                 </div>
                 <Button
