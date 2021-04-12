@@ -1,8 +1,7 @@
 import React from 'react'
-import './styles/main.css';
+import './ui/styles/main.css';
 import {Route} from "react-router-dom";
-import LandingPage from "./views/landingPage/landingPage"
-import Input from './utility/components/Input';
+import LandingPage from "./ui/views/landingPage/landingPage"
 import GoogleAnalytics from "react-ga";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
   <div className="mainContainer sm:mx-auto px-4 md:px-12 lg:px-16" >
      <Route render={tracker} />
      <Route exact path="/" component={LandingPage} />
-     <Route exact path="/testing" component={Input} />
   </div>
   );
 }

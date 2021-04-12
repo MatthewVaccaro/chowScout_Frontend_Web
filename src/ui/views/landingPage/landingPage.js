@@ -1,9 +1,16 @@
+/*
+NOTE: 
+Due to this page being built for the need to get early signups it will be changed on launch!
+This means the file arch will be updated than to be more fitting for a dynamic landing page that can be updated over time
+*/  
+
 // Deps
 import React, {useState} from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 // Utils
-import {POST_earlyEmail} from "../../utility/requestHandler"
-import Button from "../../utility/components/Button"
-import Input from "../../utility/components/Input"
+import {POST_earlyEmail} from "../../../logic/requestHandler"
+import Button from "../../primitives/Button"
+import Input from "../../primitives/Input"
 //Components
 import UpdateDialog from './components/updateDialog'
 import TwoCol from './components/TwoCol'
@@ -16,7 +23,6 @@ import breakfastTablePhoto from "../../assets/photos/breakfastTablePhoto.png"
 import FauxSearchBar from './components/SearchAnimationComponents/FauxSearchBar'
 import LocationAsset from './components/LocationAsset'
 import LowerSignUpForm from './components/LowerSignUpForm'
-import { motion, AnimatePresence } from 'framer-motion'
 import EmailNotification from './components/EmailNotification'
 
 

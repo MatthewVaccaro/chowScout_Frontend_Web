@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import Button from "../../../utility/components/Button"
-import Input from "../../../utility/components/Input"
-import {POST_earlyEmail} from "../../../utility/requestHandler"
+import Button from "../../../primitives/Button"
+import Input from "../../../primitives/Input"
+import {POST_earlyEmail} from "../../../../logic/requestHandler"
 import {iconsLight, iconsDark} from "../../../assets/icons"
 import {motion, AnimatePresence} from "framer-motion"
 import EmailNotification from './EmailNotification'
