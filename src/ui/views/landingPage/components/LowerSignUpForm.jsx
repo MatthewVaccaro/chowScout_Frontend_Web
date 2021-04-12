@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import {AnimatePresence, motion} from "framer-motion"
 //Component
-import {POST_earlyEmail} from "../../../utility/requestHandler"
-import Button from "../../../utility/components/Button"
-import Input from "../../../utility/components/Input"
+import {POST_earlyEmail} from "../../../../logic/requestHandler"
+import Button from "../../../primitives/Button"
+import Input from "../../../primitives/Input"
 
 //Assets
 import {iconsLight} from "../../../assets/icons"

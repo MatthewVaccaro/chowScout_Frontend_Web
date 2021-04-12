@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import {changeHandler} from "../helperFunctions"
+import React from 'react'
+import {changeHandler} from "../../logic/helperFunctions"
 
 
 function Input({name, state, setState, placeholder, validation = false}) {
