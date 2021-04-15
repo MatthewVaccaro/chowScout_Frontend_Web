@@ -19667,6 +19667,11 @@ video {
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
+html,
+body {
+  box-sizing: border-box;
+}
+
 .mainContainer {
   max-width: 1040px;
 }
