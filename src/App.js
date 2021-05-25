@@ -3,9 +3,7 @@ import "./ui/styles/main.css";
 import { Route } from "react-router-dom";
 import LandingPage from "./ui/views/landingPage/landingPage";
 import GoogleAnalytics from "react-ga";
-import ClearButton from "./ui/views/searchView/atoms/clearButton";
-import SearchBar from "./ui/views/searchView/molecules/searchBar";
-import SearchResultHeader from "./ui/views/searchView/atoms/searchResultHeader";
+import Dish from "./ui/primitives/molecules/dish";
 
 function App() {
 	GoogleAnalytics.initialize("UA-193650779-1");
@@ -20,7 +18,7 @@ function App() {
 		<div className="mainContainer sm:mx-auto px-4 md:px-12 lg:px-16">
 			<Route render={tracker} />
 			<Route exact path="/" component={LandingPage} />
-			<Route exact path="/testing" component={SearchResultHeader} />
+			<Route exact path="/testing" component={Dish} />
 		</div>
 	);
 }
