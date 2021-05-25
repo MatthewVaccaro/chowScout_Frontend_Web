@@ -3,7 +3,6 @@ import DishContents from "../../../primitives/atoms/dishContents";
 import SearchResultHeader from "../atoms/searchResultHeader";
 
 function RestaurantSearchResult({ result }) {
-	console.log("doop", result.restaurant);
 	return (
 		<div className=" my-4 sm:my-8">
 			{result ? (
