@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import DistanceMarker from "./atoms/distanceMarker";
 import RestaurantSearchResult from "./organisms/restaurantSearchResult";
 
 function SearchView() {
@@ -19,6 +20,7 @@ function SearchView() {
 
 	return (
 		<div>
+			<DistanceMarker miles={"69"} />
 			{data
 				? data.map((cv) => {
 						return <RestaurantSearchResult result={cv} />;
