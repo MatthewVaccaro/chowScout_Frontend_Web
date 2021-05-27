@@ -6,56 +6,57 @@
 
 html,
 body {
-  box-sizing: border-box;
+	box-sizing: border-box;
+	background: lightblue;
 }
 
 .mainContainer {
-  max-width: 1040px;
+	max-width: 1040px;
 }
 
 h1 {
-  font-size: 4.3rem;
-  line-height: 70pt;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
+	font-size: 4.3rem;
+	line-height: 70pt;
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
 }
 
 h2 {
-  font-size: 2.15rem;
-  line-height: 38pt;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
+	font-size: 2.15rem;
+	line-height: 38pt;
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
 }
 
 h3 {
-  font-size: 1.5rem;
-  line-height: 28pt;
+	font-size: 1.5rem;
+	line-height: 28pt;
 }
 
 h4 {
-  font-size: 1.18rem;
-  line-height: 23pt;
+	font-size: 1.18rem;
+	line-height: 23pt;
 }
 
 p,
 a {
-  font-size: 1rem;
-  line-height: 19pt;
+	font-size: 1rem;
+	line-height: 19pt;
 }
 
 h5 {
-  font-size: 0.875rem;
-  line-height: 16pt;
+	font-size: 0.875rem;
+	line-height: 16pt;
 }
 
 h6 {
-  font-size: 0.75rem;
-  line-height: 14pt;
+	font-size: 0.75rem;
+	line-height: 14pt;
 }
 
 @media only screen and (max-width: 500px) {
-  h1 {
-    font-size: 3.5rem;
-    line-height: 49pt;
-  }
+	h1 {
+		font-size: 3.5rem;
+		line-height: 49pt;
+	}
 }

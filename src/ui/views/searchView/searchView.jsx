@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import DistanceMarker from "./atoms/distanceMarker";
+import SearchInput from "./atoms/searchInput";
 import RestaurantSearchResult from "./organisms/restaurantSearchResult";
+import SearchBar from "./molecules/searchBar";
 
 function SearchView() {
 	const [data, setData] = useState();
@@ -20,6 +22,7 @@ function SearchView() {
 
 	return (
 		<div>
+			<SearchBar />
 			<DistanceMarker miles={"69"} />
 			{data
 				? data.map((cv) => {
