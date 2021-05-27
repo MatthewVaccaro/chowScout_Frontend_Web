@@ -19670,6 +19670,7 @@ video {
 html,
 body {
   box-sizing: border-box;
+  background: lightblue;
 }
 
 .mainContainer {
