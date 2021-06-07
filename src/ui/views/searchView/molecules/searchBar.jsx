@@ -1,62 +1,59 @@
-import { useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { POST_dishSearch } from "../../../../logic/requestHandler";
+import Button from "../../../primitives/Button";
 
 //atoms
-import ClearButton from "../atoms/clearButton";
 import SearchInput from "../atoms/searchInput";
 import SearchIcon from "../atoms/searchIcon";
-import { iconsDark } from "../../../assets/icons";
+import { iconsDark, iconsLight } from "../../../assets/icons";
+import { searchContext } from "../../../../data/context/searchContext";
 
-function SearchBar() {
+function SearchBar({ state, setState }) {
+	const [{ makeRequest }] = useContext(searchContext);
 	const [focus, setFocus] = useState(false);
-	const [searchValue, setSearch] = useState({ search: "" });
-
-	//TODO: This needs to be grabbed by using the google sensors
-	const coords = {
-		latitude: 36.1254902176224,
-		longitude: -86.78860731230652,
-	};
-	// TODO: This will need to leverage react Query
-	useEffect(() => {
-		if (searchValue.search.length > 0) {
-			POST_dishSearch(searchValue.search, coords)
-				.then((res) => {
-					console.log(res);
-					console.log(searchValue);
-				})
-				.catch((err) => console.log(err));
-		}
-	}, [searchValue.search]);
 
 	return (
-		<motion.div
-			className={`rounded-lg p-4 w-full mt-3 flex items-center justify-between transition-all duration-300 bg-white border-2 border-solid ${
-				focus ? "border-blue" : "border-white"
-			}`}>
-			<div className="flex w-full items-center">
-				<SearchIcon color={focus ? "#1789FC" : "#999"} />
+		<div className="flex mt-3 shadow-md rounded-md">
+			<form className="flex w-full">
+				<motion.div
+					className={`rounded-l-md p-4 w-full flex items-center justify-between transition-all duration-300 bg-white border-2 border-solid ${
+						focus ? "border-blue" : "border-white"
+					}`}>
+					<div className="flex w-full items-center">
+						<SearchIcon color={focus ? "#1789FC" : "#999"} />
 
-				<div onClick={() => setFocus(true)} onBlur={() => setFocus(false)} className="w-full">
-					<SearchInput state={searchValue} setState={setSearch} />
-				</div>
-			</div>
-			<AnimatePresence>
-				{searchValue.search ? (
-					<motion.img
-						initial={{ marginTop: "7px", opacity: "0%" }}
-						animate={{ marginTop: "0px", opacity: "100%" }}
-						exit={{ marginTop: "7px", opacity: "0%" }}
-						className="cursor-pointer ml-4"
-						src={iconsDark.closeIcon}
-						alt="clear search icon"
-						onClick={() => setSearch({ search: "" })}
-					/>
-				) : (
-					""
-				)}
-			</AnimatePresence>
-		</motion.div>
+						<div onClick={() => setFocus(true)} onBlur={() => setFocus(false)} className="w-full">
+							<SearchInput state={state} setState={setState} />
+						</div>
+					</div>
+					<AnimatePresence>
+						{state.search ? (
+							<motion.img
+								initial={{ marginTop: "7px", opacity: "0%" }}
+								animate={{ marginTop: "0px", opacity: "100%" }}
+								exit={{ marginTop: "7px", opacity: "0%" }}
+								className="cursor-pointer ml-4"
+								src={iconsDark.closeIcon}
+								alt="clear search icon"
+								onClick={() => setState({ search: "" })}
+							/>
+						) : (
+							""
+						)}
+					</AnimatePresence>
+				</motion.div>
+				<Button
+					background={state.search.length > 1 ? "green" : "black10"}
+					icon={iconsLight.arrowIcon}
+					disabled={state.search.length > 1 ? false : true}
+					radius="rounded-r-md"
+					onClick={(e) => {
+						e.preventDefault();
+						makeRequest();
+					}}
+				/>
+			</form>
+		</div>
 	);
 }
 
