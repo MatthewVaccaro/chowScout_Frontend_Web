@@ -5,6 +5,7 @@ import LandingPage from "./ui/views/landingPage/landingPage";
 import GoogleAnalytics from "react-ga";
 import SearchView from "./ui/views/searchView/searchView";
 import { SearchProvider } from "./data/context/searchContext";
+import RestaurantView from "./ui/views/restaurantView/restaurantView";
 
 function App() {
 	GoogleAnalytics.initialize("UA-193650779-1");
@@ -20,7 +21,7 @@ function App() {
 			<SearchProvider>
 				<Route render={tracker} />
 				<Route exact path="/" component={LandingPage} />
-				<Route exact path="/testing" component={SearchView} />
+				<Route exact path="/testing" component={RestaurantView} />
 			</SearchProvider>
 		</div>
 	);
