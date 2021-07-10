@@ -6,6 +6,8 @@ import GoogleAnalytics from "react-ga";
 import SearchView from "./ui/views/searchView/searchView";
 import { SearchProvider } from "./data/context/searchContext";
 import RestaurantView from "./ui/views/restaurantView/restaurantView";
+import RestaurantProvider from "./data/context/restaurantContext";
+import MenuDimensionsProvider from "./data/context/menuDimentionsContext";
 
 function App() {
 	GoogleAnalytics.initialize("UA-193650779-1");
@@ -17,12 +19,16 @@ function App() {
 	};
 
 	return (
-		<div className="mainContainer sm:mx-auto px-4 md:px-12 lg:px-16">
-			<SearchProvider>
-				<Route render={tracker} />
-				<Route exact path="/" component={LandingPage} />
-				<Route exact path="/testing" component={RestaurantView} />
-			</SearchProvider>
+		<div className="sm:mx-auto">
+			<RestaurantProvider>
+				<MenuDimensionsProvider>
+					<SearchProvider>
+						<Route render={tracker} />
+						<Route exact path="/" component={LandingPage} />
+						<Route exact path="/testing" component={RestaurantView} />
+					</SearchProvider>
+				</MenuDimensionsProvider>
+			</RestaurantProvider>
 		</div>
 	);
 }

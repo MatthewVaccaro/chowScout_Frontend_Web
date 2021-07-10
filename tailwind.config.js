@@ -20,7 +20,7 @@ module.exports = {
 
 			green: "rgba(1, 217, 90, 1)",
 			green50: "rgba(1, 217, 90, .5)",
-			green20: "rgba(1, 217, 90, .2)",
+			green10: "rgba(1, 217, 90, .1)",
 
 			blue: "rgba(23, 137, 252, 1)",
 			blue50: "rgba(23, 137, 252, .5)",

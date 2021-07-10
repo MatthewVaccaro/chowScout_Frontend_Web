@@ -17,3 +17,8 @@ export async function POST_dishSearch(value, coords) {
 	const request = await axios.post(`http://localhost:4000/api/client/${value}`, coords);
 	return request;
 }
+
+export async function GET_singleRestaurant(id) {
+	const request = await axios.get(`http://localhost:4000/api/internal/washer/singleRestaurant/${id}`);
+	return request;
+}
