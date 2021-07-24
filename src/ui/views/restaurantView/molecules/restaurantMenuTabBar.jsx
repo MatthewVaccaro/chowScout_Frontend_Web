@@ -8,14 +8,14 @@ function RestaurantMenuTabBar({ sections }) {
 
 	if (sections) {
 		return (
-			<div className="bg-white shadow-lg">
+			<div className="shadow-lg py-2 bg-white">
 				<motion.div
-					style={{ x }}
+					// style={{ x }}
 					drag={viewportWidth < xScrollWidth ? "x" : ""}
 					dragConstraints={{ left: -xScrollWidth + viewportWidth, right: 0 }}
 					dragElastic={0.2}
 					dragMomentum={false}
-					className=" flex gap-3 md:px-12 lg:px-16 px-3">
+					className={`flex gap-3 md:px-12 lg:px-16 px-3 rounded-b-md ${viewportWidth < xScrollWidth ? "" : "justify-center"}`}>
 					{sections.map((obj) => {
 						return <RestaurantMenuTab key={obj.groupTitle} text={obj.groupTitle} active={obj.active} id={obj.id} />;
 					})}

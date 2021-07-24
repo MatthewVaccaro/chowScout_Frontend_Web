@@ -3,7 +3,7 @@ export const restaurantContext = createContext();
 
 export function RestaurantProvider(props) {
 	const [restaurant, setRestaurant] = useState({
-		results: {},
+		results: null,
 		sections: [],
 		methods: {
 			updateRestaurantData: updateRestaurantData,
