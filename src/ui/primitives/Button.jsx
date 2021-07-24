@@ -7,7 +7,7 @@ function Button({ preset, content, startIcon, endIcon, color = "white", backgrou
 
 	if (preset === "back") {
 		return (
-			<button className="flex items-center justify-center py-3 px-4" onClick={() => history.goBack()}>
+			<button className="flex items-center justify-center py-3 px-2" onClick={() => history.goBack()}>
 				<img src={iconsDark.backIcon} alt="back button" />
 				<p className="text-black font-medium mr-4"> Back </p>
 			</button>
@@ -19,9 +19,9 @@ function Button({ preset, content, startIcon, endIcon, color = "white", backgrou
 			<button
 				onClick={onClick}
 				disabled={disabled}
-				className="bg-green flex items-center justify-center py-3 px-5 gap-2 rounded-md hover:bg-green50 transition-all duration-300">
+				className="bg-green flex items-center justify-center py-3 px-5 gap-2 w-full md:w-56 h-full rounded-md hover:bg-green50 transition-all duration-300">
 				{startIcon ? <img src={startIcon} alt="icon" /> : ""}
-				{content ? <p className={`text-white font-medium mr-4`}> {content} </p> : ""}
+				{content ? <p className={`text-white font-semibold mr-4`}> {content} </p> : ""}
 				{endIcon ? <img src={endIcon} alt="icon" /> : ""}
 			</button>
 		);
@@ -32,8 +32,8 @@ function Button({ preset, content, startIcon, endIcon, color = "white", backgrou
 			<button
 				onClick={onClick}
 				disabled={disabled}
-				className="flex items-center justify-center py-3 px-5 gap-2 rounded-md border-black70 border-2 hover:bg-green50 transition-all duration-300">
-				{content ? <p className={`text-black70 font-medium mr-4`}> {content} </p> : ""}
+				className=" py-3 px-5 gap-2 rounded-md border-black70 border-2 box-border hover:bg-black10 transition-all duration-300">
+				{content ? <p className={`text-black70 font-semibold`}> {content} </p> : ""}
 			</button>
 		);
 	}
@@ -44,7 +44,7 @@ function Button({ preset, content, startIcon, endIcon, color = "white", backgrou
 			disabled={disabled}
 			className={`bg-${background} flex items-center justify-center py-3 px-5 gap-2 ${radius} hover:bg-${background}50 transition-all duration-300`}>
 			{startIcon ? <img src={startIcon} alt="icon" /> : ""}
-			{content ? <p className={`text-${color} font-medium mr-4`}> {content} </p> : ""}
+			{content ? <p className={`text-${color} font-semibold mr-4`}> {content} </p> : ""}
 			{endIcon ? <img src={endIcon} alt="icon" /> : ""}
 		</button>
 	);

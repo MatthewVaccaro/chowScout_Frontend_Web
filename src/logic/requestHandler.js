@@ -19,6 +19,6 @@ export async function POST_dishSearch(value, coords) {
 }
 
 export async function GET_singleRestaurant(id) {
-	const request = await axios.get(`http://localhost:4000/api/internal/washer/singleRestaurant/${id}`);
+	const request = await axios.get(`https://chowscout-backend.herokuapp.com/api/internal/washer/singleRestaurant/${id}`);
 	return request;
 }
