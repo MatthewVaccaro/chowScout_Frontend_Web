@@ -2,9 +2,10 @@ import { useContext, useEffect } from "react";
 import { restaurantContext } from "../../../data/context/restaurantContext";
 import { GET_singleRestaurant } from "../../../logic/requestHandler";
 import RestaurantHeader from "./organisms/restaurantHeader";
+import RestaurantInfoModal from "./molecules/restaurantInfoModal"
 
 function RestaurantView() {
-	const [{ methods }] = useContext(restaurantContext);
+	const [{ results, methods }] = useContext(restaurantContext);
 
 	useEffect(() => {
         GET_singleRestaurant(50)
@@ -13,6 +14,7 @@ function RestaurantView() {
 				methods.updateRestaurantData(res.data);
                 methods.createSectionState(res.data.menu);
                 methods.restaurantTimeData(res.data.hours);
+                methods.restaurantHoursInfo(res.data.hours);
 			})
 			.catch((err) => console.log(err));
 	}, []);
@@ -20,6 +22,7 @@ function RestaurantView() {
 	return (
 		<div className="bg-white">
 			<RestaurantHeader />
+			{results ? <RestaurantInfoModal restaurantInfo={results.hours}/> : "Loading..."}
 		</div>
 	);
 }
