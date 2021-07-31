@@ -5,6 +5,7 @@ import RestaurantMenuTabBar from "../molecules/restaurantMenuTabBar";
 import { useContext } from "react";
 import { restaurantContext } from "../../../../data/context/restaurantContext";
 import { iconsLight } from "../../../assets/icons";
+import {toggleModal} from "../../../../logic/modalToggler";
 
 function RestaurantHeader() {
 	const [{ results, sections }] = useContext(restaurantContext);
@@ -25,7 +26,7 @@ function RestaurantHeader() {
 						<Button preset="main" content="Get Directions" endIcon={iconsLight.directionsIcon} />
 					</div>
 					<div className="w-4/12 sm:w-auto">
-						<Button preset="secondary" content="More Info" />
+						<Button preset="secondary" content="More Info" onClick={toggleModal} className="modal-open"/>
 					</div>
 				</div>
 			</div>
