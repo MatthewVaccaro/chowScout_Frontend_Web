@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { isOpen, setupTimes } from "../../logic/timeHelpers";
 export const restaurantContext = createContext();
 
 export function RestaurantProvider(props) {
@@ -9,6 +10,7 @@ export function RestaurantProvider(props) {
 			updateRestaurantData: updateRestaurantData,
 			createSectionState: createSectionState,
 			toggleSection: toggleSection,
+			restaurantTimeData: restaurantTimeData,
 		},
 	});
 
@@ -39,6 +41,10 @@ export function RestaurantProvider(props) {
 		setRestaurant((prev) => {
 			return { ...prev, sections: newState };
 		});
+	}
+	function restaurantTimeData (restaurantHours) {
+		setupTimes(restaurantHours)
+		return isOpen()
 	}
 
 	return <restaurantContext.Provider value={[restaurant]}>{props.children}</restaurantContext.Provider>;

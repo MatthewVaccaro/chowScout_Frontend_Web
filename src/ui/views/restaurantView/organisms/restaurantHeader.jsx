@@ -1,4 +1,5 @@
 import Button from "../../../primitives/Button";
+import RestaurantHoursDisplay from "../molecules/restaurantHours";
 import RestaurantHeaderContent from "../atoms/restaurantHeaderContent";
 import RestaurantMenuTabBar from "../molecules/restaurantMenuTabBar";
 import { useContext } from "react";
@@ -12,7 +13,10 @@ function RestaurantHeader() {
 			<div className="mx-3">
 				<Button preset="back" />
 				{results ? (
-					<RestaurantHeaderContent restauarntName={results.business.businessName} cuisine={results.business.cuisine} miles="4.56 Miles" />
+					<>
+						<RestaurantHoursDisplay restaurantHours={results.hours}/>
+						<RestaurantHeaderContent restauarntName={results.business.businessName} cuisine={results.business.cuisine} miles="4.56 Miles" />
+					</>
 				) : (
 					""
 				)}
